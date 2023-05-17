@@ -1,0 +1,122 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* --------------- ALL PRODUCTS DESIGN ---------------------*/
+
+.productList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.allproduct{
+    height: 350px;
+    width: 300px;
+    background-color: rgb(204, 204, 204);
+    padding: 30px;
+    border-radius: 20px;
+}
+.allproduct_Name{
+    color: royalblue;
+}
+.allproduct_Image{
+    height: 50%;
+    width: 100%;
+}
+.allproduct_Price{
+    color: green;
+}
+
+/* ------------  NAVBAR DESIGN ----------- */
+.navBar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 60px;
+    width: 100%;
+    background-color: pink;
+}
+
+/* -------------- ONE PRODUCT DESIGN ------------- */
+
+.oneProduct{
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-around;
+}
+.oneProduct_displayImage{
+    display: flex;
+    gap: 30px;
+}
+.oneProduct_listImages{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.oneProduct_listImages > img{
+    height: 80px;
+    width: 80px;
+}
+
+.oneProduct_displayImage > img {
+    height: 600px;
+    width: 600px;
+}
+.oneProduct_AddInventory{
+    height: 100px;
+    width: 600px;
+    background-color: cornflowerblue;
+    color: white;
+    font-size: 30px;
+    transition: 1s;
+}
+.oneProduct_AddInventory:hover{
+    cursor: pointer;
+    background-color: forestgreen;
+}
+
+/* -------------- ONE PRODUCT DESIGN in INVENTORY ------------- */
+.inventoryProductList{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 5%;
+}
+
+.inventoryProduct_card{
+    height: 130px;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: beige;
+}
+.inventoryProduct_card img{
+    height: 100%;
+    width: 130px;
+}
+.inventoryProduct_detail{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.inventoryProduct_detail p{
+    margin-top: -7%;
+}
+.inventoryProduct_card .deleteBTN{
+    height: 20px;
+    color: white;
+    width: 90px;
+    padding: 14px;
+    text-align: center;
+    background-color: red;
+    cursor: pointer;
+}
