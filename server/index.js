@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 app.use(session({
     key: "userID",
-    secret: process.env.SESSION_SECRET_KEY,//Normaly Very long random secret string but here we don't care about that
+    secret: process.env.SESSION_SECRET_KEY, // |  | process.env["SESSION_SECRET_KEY"]//Normaly Very long random secret string but here we don't care about that
     resave: false,
     saveUninitialized: false,
     cookie:{
@@ -60,10 +60,10 @@ app.get('/products', async(req,res)=>{
 
 // connect to mysql
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "ecommerce_react_node"
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME 
 });
 
 
@@ -71,9 +71,15 @@ const db = mysql.createConnection({
 db.connect((err)=>{
     if(err){
         console.log(err)
+        console.log("NOT CONNECTED")
     }
    else{
     console.log("connected !")
+    const sql = "CREATE TABLE IF NOT EXISTS users (id INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(255) NOT NULL, password VARCHAR(255) NOT NULL)";
+    db.query(sql, function (err, result) {
+        if (err) throw err;
+        console.log("Table created");
+    });
    }
 })
 

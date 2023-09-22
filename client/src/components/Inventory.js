@@ -16,7 +16,7 @@ export default function Inventory(){
             i = 0, key;
         
         for (; key = keys[i]; i++) {
-            if(key != "token"){
+            if(!isNaN(key)){
                 let product = JSON.parse(localStorage.getItem(key))
                 if(product.user == userDetails.username){
                     archive.push(product)
